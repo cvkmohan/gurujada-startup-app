@@ -1,0 +1,55 @@
+.content {
+  background-color: #eee;
+  padding: 20px;
+  margin: 0 -20px; /* negative indent the amount of the padding to maintain the grid system */
+  -webkit-border-radius: 0 0 6px 6px;
+  -moz-border-radius: 0 0 6px 6px;
+  border-radius: 0 0 6px 6px;
+  -webkit-box-shadow: 0 1px 2px rgba(0,0,0,.15);
+  -moz-box-shadow: 0 1px 2px rgba(0,0,0,.15);
+  box-shadow: 0 1px 2px rgba(0,0,0,.15);
+}
+
+body { padding-top: 60px; }
+@import "twbs/bootstrap/variables.less";
+@import "variables.less";
+@import "twbs/bootstrap/mixins.less";
+
+// Reset
+@import "twbs/bootstrap/normalize.less";
+
+// Core CSS
+@import "twbs/bootstrap/scaffolding.less";
+@import "twbs/bootstrap/type.less";
+@import "twbs/bootstrap/code.less";
+@import "twbs/bootstrap/grid.less";
+
+@import "twbs/bootstrap/tables.less";
+@import "twbs/bootstrap/forms.less";
+@import "twbs/bootstrap/buttons.less";
+
+// Components: common
+@import "twbs/bootstrap/input-groups.less";
+@import "twbs/bootstrap/dropdowns.less";
+@import "twbs/bootstrap/close.less";
+
+// Components: Nav
+@import "twbs/bootstrap/navs.less";
+@import "twbs/bootstrap/navbar.less";
+
+// Components: Popovers
+@import "twbs/bootstrap/modals.less";
+@import "twbs/bootstrap/tooltip.less";
+
+// Components: Misc
+@import "twbs/bootstrap/alerts.less";
+@import "twbs/bootstrap/progress-bars.less";
+@import "twbs/bootstrap/accordion.less";
+@import "twbs/bootstrap/carousel.less";
+@import "twbs/bootstrap/jumbotron.less";
+
+// Utility classes
+@import "twbs/bootstrap/utilities.less"; // Has to be last to override when necessary
+@import "twbs/bootstrap/responsive-utilities.less";
+
+@import "bootswatch";
