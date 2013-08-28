@@ -197,7 +197,7 @@ end
 remove_file 'app/assets/stylesheets/application.css'
 
 ### Download misc files
-source_url = 'https://github.com/krushi123/gurujada-startup-app'
+source_url = 'https://raw.github.com/krushi123/gurujada-startup-app/master'
 get "#{source_url}/app/controllers/users/omniauth_callbacks_controller.rb",   'app/controllers/users/omniauth_callbacks_controller.rb'
 get "#{source_url}/app/controllers/users/passwords_controller.rb",            'app/controllers/users/passwords_controller.rb'
 get "#{source_url}/app/controllers/users/registrations_controller.rb",        'app/controllers/users/registrations_controller.rb'
