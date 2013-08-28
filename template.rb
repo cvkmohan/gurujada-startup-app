@@ -198,6 +198,7 @@ remove_file 'app/assets/stylesheets/application.css'
 
 ### Download misc files
 source_url = 'https://raw.github.com/krushi123/gurujada-startup-app/master'
+#source_url = '/home/krishnamohan/projects/gurujada-startup-app'
 get "#{source_url}/app/controllers/users/omniauth_callbacks_controller.rb",   'app/controllers/users/omniauth_callbacks_controller.rb'
 get "#{source_url}/app/controllers/users/passwords_controller.rb",            'app/controllers/users/passwords_controller.rb'
 get "#{source_url}/app/controllers/users/registrations_controller.rb",        'app/controllers/users/registrations_controller.rb'
@@ -215,8 +216,6 @@ get "#{source_url}/app/views/layouts/application.html.haml",                   '
 get "#{source_url}/db/seeds.rb",                                              'db/seeds.rb'
 get "#{source_url}/app/assets/stylesheets/bootstrap_and_overrides.css.less",  'app/assets/stylesheets/bootstrap_and_overrides.css.less'
 get "#{source_url}/app/assets/stylesheets/application.css.less",  'app/assets/stylesheets/application.css.less'
-get "#{source_url}/app/assets/stylesheets/bootswatch.less",  'app/assets/stylesheets/bootswatch.less'
-get "#{source_url}/app/assets/stylesheets/variables.less",  'app/assets/stylesheets/variables.less'
 
 remove_file 'app/views/layouts/application.html.erb'
 
