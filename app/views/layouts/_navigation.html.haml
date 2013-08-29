@@ -1,4 +1,4 @@
--menu_group
+=menu_group do
   -if user_signed_in?
     =menu_item 'Logout', destroy_user_session_path, :method=>'delete'
   -else
