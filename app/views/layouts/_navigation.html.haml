@@ -1,13 +1,30 @@
-=menu_group do
-  -if user_signed_in?
-    =menu_item 'Logout', destroy_user_session_path, :method=>'delete'
-  -else
-    =menu_item 'Login', new_user_session_path
-  - if user_signed_in?
-    =menu_item 'Edit account', edit_user_registration_path
-    - if current_user.has_role? :admin
-      =menu_item 'Admin', users_path
-  - else
-    =menu_item 'Sign up', new_user_registration_path
-    =menu_item "Sign in with Twitter", user_omniauth_authorize_path(:twitter)
-    =menu_item "Sign in with Facebook", user_omniauth_authorize_path(:facebook)
+.navbar.navbar-default
+  .container
+    .navbar-header
+      %button.navbar-toggle{"data-target" => ".navbar-responsive-collapse", "data-toggle" => "collapse", :type => "button"}
+        %span.icon-bar
+        %span.icon-bar
+        %span.icon-bar
+      %a.navbar-brand
+        =link_to "Base App", root_path
+    .navbar-collapse.collapse.navbar-responsive-collapse
+      %ul.nav.navbar-nav
+        -if user_signed_in?
+          %li
+            =link_to 'Logout', destroy_user_session_path, :method=>'delete'
+        -else
+          %li
+            =link_to 'Login', new_user_session_path
+        - if user_signed_in?
+          %li
+            =link_to 'Edit account', edit_user_registration_path
+          - if current_user.has_role? :admin
+            %li
+              =link_to 'Admin', users_path
+        - else
+          %li
+            =link_to 'Sign up', new_user_registration_path
+          %li
+            =link_to "Sign in with Twitter", user_omniauth_authorize_path(:twitter)
+          %li
+            =link_to "Sign in with Facebook", user_omniauth_authorize_path(:facebook)

@@ -52,7 +52,7 @@ gem 'ckeditor', :git => 'git://github.com/galetahub/ckeditor.git'
 gem 'mongoid-paperclip', :require => 'mongoid_paperclip'
 
 gem "less-rails"
-gem 'twitter-bootstrap-rails',:git => 'git://github.com/diowa/twitter-bootstrap-rails.git',:branch=>'bootstrap-3.0.0'
+gem 'twitter-bootswatch-rails', :git => 'git://github.com/scottvrosenthal/twitter-bootswatch-rails.git'
 gem 'csso-rails' # CSS Optimizer
 gem 'therubyracer', platforms: :ruby
 gem 'sprockets'
@@ -119,7 +119,9 @@ run 'bundle install'
 
 ### Generators
 generate 'mongoid:config'
-generate 'bootstrap:install less'
+generate 'bootswatch:install flatly'
+generate 'bootswatch:import flatly'
+generate 'bootswatch:layout flatly'
 generate 'simple_form:install --bootstrap'
 generate 'devise:install'
 generate 'devise:views'
@@ -194,7 +196,7 @@ inject_into_file 'config/initializers/devise.rb', after: /# config.omniauth .*?\
   eos
 end
 
-remove_file 'app/assets/stylesheets/application.css'
+#remove_file 'app/assets/stylesheets/application.css'
 
 ### Download misc files
 source_url = 'https://raw.github.com/krushi123/gurujada-startup-app/master'
@@ -214,11 +216,11 @@ get "#{source_url}/app/views/layouts/_messages.html.haml",                     '
 get "#{source_url}/app/views/layouts/_navigation.html.haml",                   'app/views/layouts/_navigation.html.haml'
 get "#{source_url}/app/views/layouts/application.html.haml",                   'app/views/layouts/application.html.haml'
 get "#{source_url}/db/seeds.rb",                                              'db/seeds.rb'
-get "#{source_url}/app/assets/stylesheets/bootstrap_and_overrides.css.less",  'app/assets/stylesheets/bootstrap_and_overrides.css.less'
-get "#{source_url}/app/assets/stylesheets/application.css.less",  'app/assets/stylesheets/application.css.less'
+#get "#{source_url}/app/assets/stylesheets/bootstrap_and_overrides.css.less",  'app/assets/stylesheets/bootstrap_and_overrides.css.less'
+#get "#{source_url}/app/assets/stylesheets/application.css.less",  'app/assets/stylesheets/application.css.less'
 
 remove_file 'app/views/layouts/application.html.erb'
-
+remove_file 'app/views/layouts/flatly.html.haml'
 
 git :init
 git add: "."
